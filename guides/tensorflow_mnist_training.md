@@ -75,3 +75,5 @@ Using below command to start tensorboard. Change 9aa to your Container Id (only 
 ```
 docker exec -it 9aa tensorboard --logdir=/tmp/tmpk9fuday4
 ```
+
+Then open the tensorboard web page. Change the url to nas_ip, change to the port we specified before (16006). For example, http://nas_ip:16006/
