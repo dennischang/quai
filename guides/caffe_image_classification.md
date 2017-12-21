@@ -1,6 +1,6 @@
 # Image Classification using Caffe and QuAI
 
-gin the NAS
+Login the NAS
 ```
 ssh admin@nas_ip
 ```
@@ -42,6 +42,7 @@ ls -l models/bvlc_googlenet/
 ./scripts/download_model_binary.py models/bvlc_googlenet
 
 ./data/ilsvrc12/get_ilsvrc_aux.sh
+
 ./build/examples/cpp_classification/classification.bin models/bvlc_googlenet/deploy.prototxt models/bvlc_googlenet/bvlc_googlenet.caffemodel data/ilsvrc12/imagenet_mean.binaryproto data/ilsvrc12/synset_words.txt examples/images/cat.jpg
 ```
 
