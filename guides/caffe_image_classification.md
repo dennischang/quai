@@ -31,18 +31,33 @@ Thu Dec 21 10:07:59 2017
 GPU=nvidia0 gpu-docker run --rm nvidia/cuda nvidia-smi -l 1
 ```
 
-Start the caffe:gpu docker and run the first example
+Start the gpu version of caffe docker and run the first example
 ```
 GPU=nvidia0 gpu-docker run -it bvlc/caffe:gpu bash
+```
 
+Move to caffe folder
+```
 cd /opt/caffe
+```
 
+This is the location of GoogLeNet model, prototxt is the architecture of GoogLeNet model. The .caffemodel file need download manually.
+```
 ls -l models/bvlc_googlenet/
+```
 
+The script to download the GoogLeNet weights file (.caffemodel).
+```
 ./scripts/download_model_binary.py models/bvlc_googlenet
+```
 
+The script to download the class label.
+```
 ./data/ilsvrc12/get_ilsvrc_aux.sh
+```
 
+Run the pre-compiled cpp file to do the image classification.
+```
 ./build/examples/cpp_classification/classification.bin models/bvlc_googlenet/deploy.prototxt models/bvlc_googlenet/bvlc_googlenet.caffemodel data/ilsvrc12/imagenet_mean.binaryproto data/ilsvrc12/synset_words.txt examples/images/cat.jpg
 ```
 
