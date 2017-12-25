@@ -56,7 +56,7 @@ The script to download the class label.
 ./data/ilsvrc12/get_ilsvrc_aux.sh
 ```
 
-Run the pre-compiled cpp file to do the image classification.
+Run the pre-compiled cpp file to do the image classification. The image is https://github.com/BVLC/caffe/blob/master/examples/images/cat.jpg
 ```
 ./build/examples/cpp_classification/classification.bin models/bvlc_googlenet/deploy.prototxt models/bvlc_googlenet/bvlc_googlenet.caffemodel data/ilsvrc12/imagenet_mean.binaryproto data/ilsvrc12/synset_words.txt examples/images/cat.jpg
 ```
