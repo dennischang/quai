@@ -61,19 +61,11 @@ Open and run it (Kernel | Run All)
 
 Tensorboard
 
-When running the training, you can see message like Saving graph to: /tmp/tmpk9fuday4
-
-Open another shell, login into nas, and type below command to take a note about docker id. In this example, it's 9aa4....
-```
-docker ps
-
-CONTAINER ID        IMAGE                                 COMMAND             CREATED             STATUS              PORTS                                              NAMES
-9aa479e70cbc        tensorflow/tensorflow:1.4.1-gpu-py3   "bash"              17 minutes ago      Up 16 minutes       0.0.0.0:16006->6006/tcp, 0.0.0.0:18888->8888/tcp   festive_jennings
-```
+When running the training, you can see message like Saving graph to: /tmp/model
 
 Using below command to start tensorboard. Change 9aa to your Container Id (only first 3 chars is ok), change /tmp/tmpk9fuday4 to the folder shown in above training steps.
 ```
-docker exec -it 9aa tensorboard --logdir=/tmp/tmpk9fuday4
+tensorboard --logdir=/tmp/model
 ```
 
 Then open the tensorboard web page. Change the url to nas_ip, change to the port we specified before (16006). For example, http://nas_ip:16006/
